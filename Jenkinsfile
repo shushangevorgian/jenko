@@ -13,6 +13,7 @@ pipeline {
         }
         stage('Example stage 2') {
             steps {
+                echo($BITBUCKET_COMMON_CREDS)
                 // 
             }
         }
