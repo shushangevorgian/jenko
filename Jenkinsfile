@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo  "Running ${env.BUILD_IO} on ${env.JENKINS_URL}
+                echo  "Running" ${env.BUILD_IO} on ${env.JENKINS_URL}
                     }
            }
 
