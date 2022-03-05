@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-    stage('Example') {
-           steps {
+        stage('Example') {
+            steps {
                  echo  "Running ${env.BUILD_IO} on ${env.JENKINS_URL}"
                     }
            }
