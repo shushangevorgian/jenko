@@ -8,7 +8,7 @@ pipeline {
                     }
            }
 
-
+    }
     stages {
         stage('Build') {
             steps {
@@ -26,5 +26,5 @@ pipeline {
             }
          }
        }
-    }
+    
 }
