@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "${params.Greeting} World!"
             }
-        }
+        
     }
 }
 post {
