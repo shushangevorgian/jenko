@@ -1,12 +1,12 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+    }
     stages {
-        stage('Example stage 1') {
-            environment {
-                BITBUCKET_COMMON_CREDS = credentials('shushan')
-            }
+        stage('Example') {
             steps {
-                echo($BITBUCKET_COMMON_CREDS)
+                echo "${params.Greeting} World!"
             }
         }
     }
