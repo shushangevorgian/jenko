@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo "${params.Greeting} World!"
+                sh 'exit 1'
             }
         
     }
