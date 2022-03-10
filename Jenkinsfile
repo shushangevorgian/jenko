@@ -1,20 +1,23 @@
-pipeline {
-    agent any
-    parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-        string(name: 'Alfa', defaultValue: 'Hello', description: 'How should I greet the world?')
-    }
-    stages {
-        stage('Example') {
-            steps {
-                sh 'exit 1'
-            }
-        
-    }
+stage('Build') {
+    /* .. snip .. */
 }
-post {
-        failure {
-            echo  "This is a fail"
+
+stage('Test') {
+    parallel linux: {
+        node('linux') {
+            checkout scm
+            try {
+                unstash 'app'
+                sh 'make check'
+            }
+            finally {
+                junit '**/target/*.xml'
+            }
+        }
+    },
+    windows: {
+        node('windows') {
+            /* .. snip .. */
         }
     }
 }
