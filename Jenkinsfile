@@ -7,7 +7,7 @@ pipeline {
             echo "hi"
         }
     }
- }
+}
     windows: {
         node('windows') {
             echo "hi hi"
