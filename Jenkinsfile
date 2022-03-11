@@ -11,7 +11,7 @@ pipeline {
     windows: {
         node('windows') {
             echo "hi hi"
-        }
+         }
       }
    }
 }
