@@ -1,16 +1,11 @@
 pipeline {
-    agent none
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages {
-        stage('Test'){
-            parallel linux: {
-                node('linux'){
-                    echo "hi"
-                }
-            }
-        }
-        windows : {
-            node('windows') {
-                echo "hello"
+        stage('Test') {
+            steps {
+                sh 'node --version'
             }
         }
     }
