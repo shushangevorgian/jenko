@@ -11,11 +11,14 @@ pipeline {
             }
             steps {
                 sh 'ls'
-                touch 'file'
+                sh 'touch file'
         stage('Front-end') {
             agent {
                 docker { image 'node:16.13.1-alpine' }
-           
+                     reuseNode true
+                steps {
+                    sh 'ls'
+                }
               }
            }
         }
