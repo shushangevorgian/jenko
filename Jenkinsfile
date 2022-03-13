@@ -22,8 +22,8 @@ pipeline {
               }
             steps {
                     sh 'ls'
-                }
-           }
+               }
         }
     }
+}
 
