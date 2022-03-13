@@ -5,13 +5,19 @@ pipeline {
             agent {
                 docker {
                     image 'gradle:6.7-jdk11'
+                    
                     reuseNode true
                 }
             }
             steps {
                 sh 'ls'
-                
-            }
+                touch 'file'
+        stage('Front-end') {
+            agent {
+                docker { image 'node:16.13.1-alpine' }
+           
+              }
+           }
         }
     }
 }
